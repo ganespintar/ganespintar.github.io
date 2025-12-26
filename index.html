@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Soal SD SMP - Kurikulum Merdeka</title>
+    <meta name="description" content="Latihan soal dan video rangkuman materi berbasis Kurikulum Merdeka untuk SD dan SMP">
+    <style>
+        /* CSS Sederhana Responsif */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f9f9f9;
+        }
+        header {
+            background: linear-gradient(135deg, #1a73e8, #0d47a1);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .subtitle { font-size: 1.2rem; opacity: 0.9; }
+        
+        .nav { 
+            display: flex; 
+            gap: 1rem; 
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        .nav a {
+            background: white;
+            color: #1a73e8;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            border: 2px solid #1a73e8;
+            transition: all 0.3s;
+        }
+        .nav a:hover {
+            background: #1a73e8;
+            color: white;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .card:hover { transform: translateY(-5px); }
+        .card h3 { color: #1a73e8; margin-bottom: 1rem; }
+        
+        .subject { 
+            background: #e8f0fe; 
+            border-left: 4px solid #1a73e8;
+        }
+        
+        footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #ddd;
+            text-align: center;
+            color: #666;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .nav { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🏫 Bank Soal SD & SMP</h1>
+        <p class="subtitle">Latihan soal dan video rangkuman materi berbasis Kurikulum Merdeka</p>
+    </header>
+
+    <div class="nav">
+        <a href="#sd">Sekolah Dasar</a>
+        <a href="#smp">SMP</a>
+        <a href="#video">Video Materi</a>
+        <a href="#tentang">Tentang</a>
+    </div>
+
+    <main>
+        <section id="sd">
+            <h2>📚 Sekolah Dasar (Kelas 1-6)</h2>
+            <div class="grid">
+                <div class="card subject">
+                    <h3>Matematika SD</h3>
+                    <p>Latihan soal matematika sesuai kurikulum terbaru</p>
+                    <p><strong>Ketersediaan:</strong> Kelas 1-6 lengkap</p>
+                </div>
+                <div class="card subject">
+                    <h3>IPA SD</h3>
+                    <p>Ilmu Pengetahuan Alam dengan pendekatan saintifik</p>
+                    <p><strong>Ketersediaan:</strong> Sedang dikembangkan</p>
+                </div>
+                <div class="card subject">
+                    <h3>Bahasa Indonesia</h3>
+                    <p>Materi membaca, menulis, dan tata bahasa</p>
+                    <p><strong>Ketersediaan:</strong> Kelas 4-6</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="smp" style="margin-top: 3rem;">
+            <h2>🎓 Sekolah Menengah Pertama (Kelas 7-9)</h2>
+            <div class="grid">
+                <div class="card subject">
+                    <h3>Matematika SMP</h3>
+                    <p>Aljabar, geometri, statistika untuk SMP</p>
+                    <p><strong>Update terbaru:</strong> Materi Kelas 7</p>
+                </div>
+                <div class="card subject">
+                    <h3>IPA SMP</h3>
+                    <p>Fisika, Kimia, Biologi terintegrasi</p>
+                    <p><strong>Video:</strong> Tersedia 15 video pembelajaran</p>
+                </div>
+                <div class="card subject">
+                    <h3>Bahasa Inggris</h3>
+                    <p>Grammar, vocabulary, dan conversation</p>
+                    <p><strong>Fitur:</strong> Latihan listening</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="video" style="margin-top: 3rem;">
+            <h2>🎥 Video Rangkuman Materi</h2>
+            <div class="card">
+                <h3>Pembelajaran Visual</h3>
+                <p>Setiap materi dilengkapi video penjelasan singkat (5-10 menit) yang merangkum konsep inti.</p>
+                <p><em>Contoh video akan segera tersedia...</em></p>
+            </div>
+        </section>
+    </main>
+
+    <footer id="tentang">
+        <p><strong>Bank Soal SD SMP</strong> - Sumber belajar untuk siswa Indonesia</p>
+        <p>© 2024 - Berbasis Kurikulum Merdeka</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">
+            Website dalam pengembangan aktif. Konten akan terus ditambah.
+        </p>
+    </footer>
+</body>
+</html>
