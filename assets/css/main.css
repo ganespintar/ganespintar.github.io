@@ -30,6 +30,18 @@
   text-decoration: underline;
 }
 
+.menu-icon {
+  font-size: 24px;
+  cursor: pointer;
+  user-select: none;
+  display: none;
+}
+
+.header-menu {
+  display: flex;
+  gap: 20px;
+}
+
 .content {
   max-width: 720px;
   margin: 0 auto;
@@ -73,6 +85,30 @@
 
 .donation-button:hover {
   opacity: 0.9;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 640px) {
+
+  .menu-icon {
+    display: block;
+  }
+
+  .header-menu {
+    position: absolute;
+    top: 60px;
+    right: 16px;
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    padding: 12px;
+    display: none;
+    flex-direction: column;
+  }
+
+  #menu-toggle:checked + .menu-icon + .header-menu {
+    display: flex;
+  }
 }
 
 @media (max-width: 640px) {
