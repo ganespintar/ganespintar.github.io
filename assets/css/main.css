@@ -30,6 +30,11 @@
   text-decoration: underline;
 }
 
+.content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 16px;
+}
 
 .question-image {
   display: block;
@@ -68,4 +73,21 @@
 
 .donation-button:hover {
   opacity: 0.9;
+}
+
+@media (max-width: 640px) {
+
+  .header-inner {
+    padding: 10px 12px;
+  }
+
+  .logo img {
+    height: 32px;
+  }
+
+  .header-nav a {
+    margin-left: 12px;
+    font-size: 0.85rem;
+  }
+
 }
