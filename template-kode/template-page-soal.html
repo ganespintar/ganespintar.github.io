@@ -35,7 +35,7 @@
 
     body {
       font-family: Arial, sans-serif;
-      margin: 0 rem;
+      margin: 0.2rem;
       background: #fdfdfd;
       color: #333;
       line-height: 1.6;
@@ -469,11 +469,14 @@
 
   <!-- Tambahkan soal lain di sini -->
 
- <div class="submit-section">
+<!-- ===== SUBMIT & HASIL ===== -->
+<div class="submit-section">
   <button onclick="lihatNilai()">Lihat Nilai</button>
   <div class="result-panel" id="result"></div>
-   
-   <div class="lanjutan">
+</div>
+
+<!-- ===== MATERI LANJUTAN ===== -->
+<section class="lanjutan">
   <div class="lanjutan-title">Materi & Pembahasan</div>
 
   <ul class="lanjutan-list">
@@ -490,8 +493,29 @@
       <a href="#">Kembali ke Daftar latihan soal IPAS kelas 6</a>
     </li>
   </ul>
-</div>
+</section>
 
+<div class="donation-soft">
+  <div class="donation-inner">
+    <div class="donation-title">Dukung Ganespintar ❤️</div>
+
+    <p class="donation-text">
+      Ganespintar dibuat tanpa iklan agar fokus belajar tetap terjaga.
+      Jika latihan soal ini bermanfaat, kamu bisa mendukung pengembangannya
+      melalui donasi sukarela.
+    </p>
+
+    <div class="donation-action">
+      <img 
+        src="/assets/images/qris-ganespintar.png" 
+        alt="QRIS Donasi Ganespintar"
+        loading="lazy"
+      >
+      <span class="donation-note">
+        Scan QRIS di atas untuk donasi seikhlasnya
+      </span>
+    </div>
+  </div>
 </div>
 
  <script>
