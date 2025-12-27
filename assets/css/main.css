@@ -1,3 +1,20 @@
+/* ===================================================
+   GLOBAL RESET & BASIC
+=================================================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #1F2933;
+  background: #FFFFFF;
+}
+
+/* ===================================================
+   HEADER
+=================================================== */
 .site-header {
   background: #FFFFFF;
   border-bottom: 1px solid #E5E7EB;
@@ -11,43 +28,51 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  position: relative; /* PENTING untuk dropdown */
 }
 
+/* Logo */
 .logo img {
   height: 40px;
   width: auto;
   display: block;
 }
 
-.header-nav a {
-  margin-left: 20px;
-  text-decoration: none;
-  font-size: 0.9rem;
-  color: #1F2933;
-}
-
-.header-nav a:hover {
-  text-decoration: underline;
-}
-
-.menu-icon {
-  font-size: 24px;
-  cursor: pointer;
-  user-select: none;
-  display: none;
-}
-
+/* Menu desktop */
 .header-menu {
   display: flex;
   gap: 20px;
 }
 
+.header-menu a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: #1F2933;
+}
+
+.header-menu a:hover {
+  text-decoration: underline;
+}
+
+/* Hamburger icon */
+.menu-icon {
+  font-size: 24px;
+  cursor: pointer;
+  user-select: none;
+  display: none; /* muncul hanya di mobile */
+}
+
+/* ===================================================
+   MAIN CONTENT (SOAL)
+=================================================== */
 .content {
   max-width: 720px;
   margin: 0 auto;
   padding: 16px;
 }
 
+/* Gambar soal */
 .question-image {
   display: block;
   max-width: 100%;
@@ -56,21 +81,24 @@
   border-radius: 6px;
 }
 
+/* ===================================================
+   DONATION (SOFT)
+=================================================== */
 .donation-soft {
-  margin: 20px auto 0;
-  padding: 10px;
+  margin: 32px auto 0;
+  padding: 16px;
   max-width: 720px;
+
   background: #F3F4F6;
-  border-radius: 10px;
   border: 1px dashed #E5E7EB;
+  border-radius: 10px;
   text-align: center;
 }
 
 .donation-text {
   font-size: 0.95rem;
   line-height: 1.5;
-  color: #1F2933;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .donation-button {
@@ -87,43 +115,45 @@
   opacity: 0.9;
 }
 
-/* ===== MOBILE ===== */
+/* ===================================================
+   MOBILE (RESPONSIVE)
+=================================================== */
 @media (max-width: 640px) {
 
-  .menu-icon {
-    display: block;
-  }
-
-  .header-menu {
-    position: absolute;
-    top: 60px;
-    right: 16px;
-    background: #FFFFFF;
-    border: 1px solid #E5E7EB;
-    border-radius: 8px;
-    padding: 12px;
-    display: none;
-    flex-direction: column;
-  }
-
-  #menu-toggle:checked + .menu-icon + .header-menu {
-    display: flex;
-  }
-}
-
-@media (max-width: 640px) {
-
+  /* Header spacing */
   .header-inner {
     padding: 10px 12px;
   }
 
+  /* Logo lebih kecil */
   .logo img {
     height: 32px;
   }
 
-  .header-nav a {
-    margin-left: 12px;
-    font-size: 0.85rem;
+  /* Tampilkan hamburger */
+  .menu-icon {
+    display: block;
   }
 
+  /* Menu jadi dropdown */
+  .header-menu {
+    position: absolute;
+    top: 56px;
+    right: 12px;
+
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    padding: 12px;
+
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 140px;
+  }
+
+  /* MAGIC: checkbox toggle */
+  #menu-toggle:checked + .menu-icon + .header-menu {
+    display: flex;
+  }
 }
