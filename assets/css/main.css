@@ -275,15 +275,14 @@ body {
   }
 
   .lanjutan-actions {
-    flex-direction: column;
+    flex-direction: row;
+    overflow-x: auto;
     gap: 12px;
-    align-items: center;
   }
 
   .action-button {
-    width: 100%;
-    max-width: 280px; /* agar muat di layar HP */
-    justify-content: flex-start;
+    min-width: 160px;
+    flex-shrink: 0;
   }
 
   .button-icon {
