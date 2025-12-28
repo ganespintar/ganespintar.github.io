@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPA - Kelas 2 SD</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #FFFFFF;
+            color: #1F2933;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2EC4E6 0%, #1da5c4 100%);
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #FFFFFF;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        /* Hero Image */
+        .hero-section {
+            margin: 40px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+
+        .hero-image {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            display: block;
+            background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%);
+        }
+
+        /* Chapter Cards */
+        .chapters-section {
+            margin: 40px 0;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            color: #2EC4E6;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #F4A261;
+        }
+
+        .chapter-card {
+            background: #FFFFFF;
+            border: 2px solid #E5E7EB;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .chapter-card:hover {
+            box-shadow: 0 8px 20px rgba(46, 196, 230, 0.2);
+            border-color: #2EC4E6;
+        }
+
+        .chapter-header {
+            background: #F3F4F6;
+            padding: 20px;
+            border-bottom: 2px solid #E5E7EB;
+        }
+
+        .chapter-number {
+            display: inline-block;
+            background: #2EC4E6;
+            color: #FFFFFF;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .chapter-title {
+            font-size: 1.4rem;
+            color: #1F2933;
+            margin: 8px 0;
+            font-weight: 600;
+        }
+
+        .chapter-content {
+            padding: 20px;
+        }
+
+        .main-topic-link {
+            display: block;
+            background: linear-gradient(135deg, #2EC4E6 0%, #1da5c4 100%);
+            color: #FFFFFF;
+            padding: 14px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .main-topic-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(46, 196, 230, 0.4);
+        }
+
+        .no-subtopic-note {
+            background: #F3F4F6;
+            padding: 12px 16px;
+            border-radius: 8px;
+            border-left: 4px solid #2EC4E6;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: #1F2933;
+        }
+
+        /* Subtopics */
+        .subtopics {
+            margin: 0 0 20px 0;
+        }
+
+        .subtopic-item {
+            background: #F3F4F6;
+            border: 2px solid #E5E7EB;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .subtopic-item:hover {
+            border-color: #2EC4E6;
+        }
+
+        .subtopic-toggle {
+            background: #FFFFFF;
+            border: none;
+            width: 100%;
+            padding: 16px 20px;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .subtopic-toggle:hover {
+            background: #F3F4F6;
+        }
+
+        .subtopic-toggle.active {
+            background: #2EC4E6;
+            color: #FFFFFF;
+        }
+
+        .subtopic-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #1F2933;
+        }
+
+        .subtopic-toggle.active .subtopic-title {
+            color: #FFFFFF;
+        }
+
+        .arrow {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+            color: #2EC4E6;
+        }
+
+        .subtopic-toggle.active .arrow {
+            transform: rotate(180deg);
+            color: #FFFFFF;
+        }
+
+        .subtopic-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .subtopic-content.active {
+            max-height: 300px;
+        }
+
+        .subtopic-buttons {
+            padding: 16px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+        }
+
+        /* Videos Section */
+        .videos-section {
+            margin-top: 20px;
+        }
+
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+        }
+
+        .action-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            gap: 6px;
+            text-align: center;
+            border: 2px solid transparent;
+        }
+
+        .action-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .btn-soal {
+            background: linear-gradient(135deg, #2EC4E6 0%, #1da5c4 100%);
+            color: #FFFFFF;
+        }
+
+        .btn-soal:hover {
+            box-shadow: 0 4px 12px rgba(46, 196, 230, 0.4);
+        }
+
+        .btn-rangkuman {
+            background: #F4A261;
+            color: #FFFFFF;
+        }
+
+        .btn-rangkuman:hover {
+            background: #e8935a;
+        }
+
+        .btn-pembahasan {
+            background: #F4A261;
+            color: #FFFFFF;
+        }
+
+        .btn-pembahasan:hover {
+            background: #e8935a;
+        }
+
+        .button-icon {
+            font-size: 1.5rem;
+        }
+
+        .button-label {
+            font-size: 0.85rem;
+            line-height: 1.2;
+        }
+
+        /* Footer */
+        footer {
+            background: #F3F4F6;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+            border-top: 3px solid #2EC4E6;
+        }
+
+        footer p {
+            color: #1F2933;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.4rem;
+            }
+
+            .chapter-title {
+                font-size: 1.2rem;
+            }
+
+            .chapter-header,
+            .chapter-content {
+                padding: 16px;
+            }
+
+            .videos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .subtopic-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 12px;
+            }
+
+            header {
+                padding: 30px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📚 Ilmu Pengetahuan Alam - Kelas 2 SD</h1>
+    </header>
+
+    <div class="container">
+        <!-- Hero Image -->
+        <div class="hero-section">
+            <img src="https://via.placeholder.com/1600x900/2EC4E6/FFFFFF?text=Cover+Buku+IPA+Kelas+2+SD" 
+                 alt="Cover Buku IPA Kelas 2 SD" 
+                 class="hero-image">
+        </div>
+
+        <!-- Chapters Section -->
+        <section class="chapters-section">
+            <h2 class="section-title">📖 Daftar Materi Belajar</h2>
+
+            <!-- Chapter 1 -->
+            <div class="chapter-card">
+                <div class="chapter-header">
+                    <span class="chapter-number">Bab 1</span>
+                    <h3 class="chapter-title">Pertumbuhan dan Perkembangan Makhluk Hidup</h3>
+                </div>
+                <div class="chapter-content">
+                    <div class="no-subtopic-note">
+                        ℹ️ Bab ini memiliki sub topik. Klik pada sub topik untuk melihat soal dan video pembelajaran.
+                    </div>
+
+                    <!-- Subtopics -->
+                    <div class="subtopics">
+                        <div class="subtopic-item">
+                            <button class="subtopic-toggle" onclick="toggleSubtopic(this)">
+                                <span class="subtopic-title">1.1 Pertumbuhan Manusia</span>
+                                <span class="arrow">▼</span>
+                            </button>
+                            <div class="subtopic-content">
+                                <div class="subtopic-buttons">
+                                    <a href="bab1-subtopik1-soal.html" class="action-button btn-soal">
+                                        <span class="button-icon">📝</span>
+                                        <span class="button-label">Latihan Soal</span>
+                                    </a>
+                                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" 
+                                       target="_blank" 
+                                       class="action-button btn-rangkuman">
+                                        <span class="button-icon">📹</span>
+                                        <span class="button-label">Rangkuman Materi</span>
+                                    </a>
+                                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" 
+                                       target="_blank" 
+                                       class="action-button btn-pembahasan">
+                                        <span class="button-icon">💡</span>
+                                        <span class="button-label">Pembahasan Soal</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="subtopic-item">
+                            <button class="subtopic-toggle" onclick="toggleSubtopic(this)">
+                                <span class="subtopic-title">1.2 Pertumbuhan Hewan</span>
+                                <span class="arrow">▼</span>
+                            </button>
+                            <div class="subtopic-content">
+                                <div class="subtopic-buttons">
+                                    <a href="bab1-subtopik2-soal.html" class="action-button btn-soal">
+                                        <span class="button-icon">📝</span>
+                                        <span class="button-label">Latihan Soal</span>
+                                    </a>
+                                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" 
+                                       target="_blank" 
+                                       class="action-button btn-rangkuman">
+                                        <span class="button-icon">📹</span>
+                                        <span class="button-label">Rangkuman Materi</span>
+                                    </a>
+                                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" 
+                                       target="_blank" 
+                                       class="action-button btn-pembahasan">
+                                        <span class="button-icon">💡</span>
+                                        <span class="button-label">Pembahasan Soal</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="subtopic-item">
+                            <button class="subtopic-toggle" onclick="toggleSubtopic(this)">
+                                <span class="subtopic-title">1.3 Pertumbuhan Tumbuhan</span>
+                                <span class="arrow">▼</span>
+                            </button>
+                            <div class="subtopic-content">
+                                <div class="subtopic-buttons">
+                                    <a href="bab1-subtopik3-soal.html" class="action-button btn-soal">
+                                        <span class="button-icon">📝</span>
+                                        <span class="button-label">Latihan Soal</span>
+                                    </a>
+                                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" 
+                                       target="_blank" 
+                                       class="action-button btn-rangkuman">
+                                        <span class="button-icon">📹</span>
+                                        <span class="button-label">Rangkuman Materi</span>
+                                    </a>
+                                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" 
+                                       target="_blank" 
+                                       class="action-button btn-pembahasan">
+                                        <span class="button-icon">💡</span>
+                                        <span class="button-label">Pembahasan Soal</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chapter 2 -->
+            <div class="chapter-card">
+                <div class="chapter-header">
+                    <span class="chapter-number">Bab 2</span>
+                    <h3 class="chapter-title">Hewan dan Tumbuhan di Sekitar Kita</h3>
+                </div>
+                <div class="chapter-content">
+                    <div class="no-subtopic-note">
+                        ℹ️ Bab ini memiliki sub topik. Klik pada sub topik untuk melihat soal dan video pembelajaran.
+                    </div>
+
+                    <!-- Subtopics -->
+                    <div class="subtopics">
+                        <div class="subtopic-item">
+                            <button class="subtopic-toggle" onclick="toggleSubtopic(this)">
+                                <span class="subtopic-title">2.1 Jenis-jenis Hewan</span>
+                                <span class="arrow">▼</span>
+                            </button>
+                            <div class="subtopic-content">
+                                <div class="subtopic-buttons">
+                                    <a href="bab2-subtopik1-soal.html" class="action-button btn-soal">
+                                        <span class="button-icon">📝</span>
+                                        <span class="button-label">Latihan Soal</span>
+                                    </a>
+                                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" 
+                                       target="_blank" 
+                                       class="action-button btn-rangkuman">
+                                        <span class="button-icon">📹</span>
+                                        <span class="button-label">Rangkuman Materi</span>
+                                    </a>
+                                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" 
+                                       target="_blank" 
+                                       class="action-button btn-pembahasan">
+                                        <span class="button-icon">💡</span>
+                                        <span class="button-label">Pembahasan Soal</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="subtopic-item">
+                            <button class="subtopic-toggle" onclick="toggleSubtopic(this)">
+                                <span class="subtopic-title">2.2 Jenis-jenis Tumbuhan</span>
+                                <span class="arrow">▼</span>
+                            </button>
+                            <div class="subtopic-content">
+                                <div class="subtopic-buttons">
+                                    <a href="bab2-subtopik2-soal.html" class="action-button btn-soal">
+                                        <span class="button-icon">📝</span>
+                                        <span class="button-label">Latihan Soal</span>
+                                    </a>
+                                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" 
+                                       target="_blank" 
+                                       class="action-button btn-rangkuman">
+                                        <span class="button-icon">📹</span>
+                                        <span class="button-label">Rangkuman Materi</span>
+                                    </a>
+                                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" 
+                                       target="_blank" 
+                                       class="action-button btn-pembahasan">
+                                        <span class="button-icon">💡</span>
+                                        <span class="button-label">Pembahasan Soal</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="subtopic-item">
+                            <button class="subtopic-toggle" onclick="toggleSubtopic(this)">
+                                <span class="subtopic-title">2.3 Manfaat Hewan dan Tumbuhan</span>
+                                <span class="arrow">▼</span>
+                            </button>
+                            <div class="subtopic-content">
+                                <div class="subtopic-buttons">
+                                    <a href="bab2-subtopik3-soal.html" class="action-button btn-soal">
+                                        <span class="button-icon">📝</span>
+                                        <span class="button-label">Latihan Soal</span>
+                                    </a>
+                                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" 
+                                       target="_blank" 
+                                       class="action-button btn-rangkuman">
+                                        <span class="button-icon">📹</span>
+                                        <span class="button-label">Rangkuman Materi</span>
+                                    </a>
+                                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" 
+                                       target="_blank" 
+                                       class="action-button btn-pembahasan">
+                                        <span class="button-icon">💡</span>
+                                        <span class="button-label">Pembahasan Soal</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chapter 3 - No Subtopics -->
+            <div class="chapter-card">
+                <div class="chapter-header">
+                    <span class="chapter-number">Bab 3</span>
+                    <h3 class="chapter-title">Sumber Energi dan Kegunaannya</h3>
+                </div>
+                <div class="chapter-content">
+                    <!-- Videos -->
+                    <div class="videos-section">
+                        <div class="videos-grid">
+                            <a href="bab3-soal.html" class="action-button btn-soal">
+                                <span class="button-icon">📝</span>
+                                <span class="button-label">Latihan Soal</span>
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" 
+                               target="_blank" 
+                               class="action-button btn-rangkuman">
+                                <span class="button-icon">📹</span>
+                                <span class="button-label">Rangkuman Materi</span>
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" 
+                               target="_blank" 
+                               class="action-button btn-pembahasan">
+                                <span class="button-icon">💡</span>
+                                <span class="button-label">Pembahasan Soal</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2025 Materi Belajar IPA Kelas 2 SD | Semangat Belajar! 🌟</p>
+    </footer>
+
+    <script>
+        function toggleSubtopic(button) {
+            const content = button.nextElementSibling;
+            const arrow = button.querySelector('.arrow');
+            
+            button.classList.toggle('active');
+            content.classList.toggle('active');
+            arrow.classList.toggle('rotated');
+        }
+    </script>
+</body>
+</html>
