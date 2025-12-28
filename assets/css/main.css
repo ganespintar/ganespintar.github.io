@@ -230,6 +230,57 @@ body {
   text-align: left;
 }
 
+/* ===================================================
+   SOAL ESSAI (OPTIONAL)
+=================================================== */
+.essay-box {
+  max-width: 720px;
+  margin: 24px auto 0;
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+  background: #FFFFFF;
+}
+
+/* Header */
+.essay-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 14px 16px;
+  cursor: pointer;
+}
+
+.essay-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Toggle button */
+.essay-toggle {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: #1F2933;
+}
+
+/* Content (default hidden) */
+.essay-content {
+  display: none;
+  padding: 0 16px 16px;
+}
+
+.essay-list {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.essay-list li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
 
 
 /* ===================================================
