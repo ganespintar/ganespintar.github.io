@@ -248,4 +248,24 @@ body {
   #menu-toggle:checked + .menu-icon + .header-menu {
     display: flex;
   }
+
+    .lanjutan-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .action-button {
+    display: block;
+    padding: 12px 16px;
+    border: 2px solid #2EC4E6;
+    border-radius: 10px;
+    background: transparent;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .action-button.secondary {
+    border-color: #F4A261;
+  }
 }
