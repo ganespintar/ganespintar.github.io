@@ -267,7 +267,7 @@ body {
 
 /* Content (default hidden) */
 .essay-content {
-  display: none;
+  display: block;
   padding: 0 16px 16px;
 }
 
