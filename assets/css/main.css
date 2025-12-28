@@ -166,6 +166,46 @@ body {
   color: #9CA3AF;
 }
 
+/* ===================================================
+   MATERI & PEMBAHASAN (ACTION BUTTON)
+=================================================== */
+.lanjutan {
+  margin-top: 32px;
+  text-align: center;
+}
+
+.lanjutan-title {
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.lanjutan-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Tombol transparan */
+.action-button {
+  display: block;
+  padding: 12px 16px;
+
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #1F2933;
+
+  border: 2px solid #2EC4E6;   /* biru theme */
+  border-radius: 10px;
+  background: transparent;
+
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.action-button:hover {
+  background: rgba(46, 196, 230, 0.08);
+  transform: translateY(-1px);
+}
 
 /* ===================================================
    MOBILE (RESPONSIVE)
