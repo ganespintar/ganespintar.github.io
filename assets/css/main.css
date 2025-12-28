@@ -281,7 +281,7 @@ body {
   }
 
   .action-button {
-    min-width: 140px;
+    min-width: 120px;
     flex-shrink: 0;
   }
 
