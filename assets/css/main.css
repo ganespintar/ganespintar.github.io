@@ -277,11 +277,11 @@ body {
   .lanjutan-actions {
     flex-direction: row;
     overflow-x: auto;
-    gap: 12px;
+    gap: 6px;
   }
 
   .action-button {
-    min-width: 160px;
+    min-width: 140px;
     flex-shrink: 0;
   }
 
