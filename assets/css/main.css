@@ -16,9 +16,10 @@ body {
    HEADER
 =================================================== */
 .site-header {
-  background: #FFFFFF;
+  background: transparent;
   border-bottom: 1px solid #E5E7EB;
 }
+
 
 .header-inner {
   max-width: 960px;
