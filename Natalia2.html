@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Natalia | Magang Digital Marketing & Business Development</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #4a6fa5;
+            --light-blue: #e8f4fd;
+            --warm-blue: #6b8cbc;
+            --dark-blue: #2a4a7c;
+            --accent-orange: #ff9a3d;
+            --light-gray: #f8f9fa;
+            --medium-gray: #e9ecef;
+            --dark-gray: #495057;
+            --text-color: #333;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-blue);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        /* Header & Profile */
+        .header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--warm-blue) 100%);
+            color: white;
+            padding: 40px;
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .profile-img:hover {
+            transform: scale(1.03);
+            border-color: var(--accent-orange);
+        }
+
+        .profile-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .name {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .position {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+
+        .contact-item i {
+            color: var(--accent-orange);
+            font-size: 1.1rem;
+            width: 20px;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            padding: 40px;
+        }
+
+        @media (max-width: 900px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Sections Common Styling */
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--dark-blue);
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--medium-gray);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            color: var(--primary-blue);
+        }
+
+        /* About Section */
+        .about-text {
+            line-height: 1.7;
+            font-size: 1.05rem;
+            color: var(--dark-gray);
+        }
+
+        /* Education & Experience Items */
+        .timeline-item {
+            margin-bottom: 25px;
+            padding-left: 25px;
+            border-left: 3px solid var(--warm-blue);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .timeline-item:hover {
+            border-left-color: var(--accent-orange);
+            transform: translateX(5px);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--primary-blue);
+            left: -7.5px;
+            top: 5px;
+        }
+
+        .item-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--dark-blue);
+            margin-bottom: 5px;
+        }
+
+        .item-subtitle {
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 5px;
+        }
+
+        .item-date {
+            font-size: 0.9rem;
+            color: var(--accent-orange);
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .item-description {
+            color: var(--dark-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill-tag {
+            background-color: var(--light-blue);
+            color: var(--dark-blue);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+            border: 1px solid var(--medium-gray);
+        }
+
+        .skill-tag:hover {
+            background-color: var(--primary-blue);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Portfolio Links */
+        .portfolio-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .portfolio-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--light-gray);
+            padding: 12px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: var(--transition);
+            border: 1px solid var(--medium-gray);
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .portfolio-link:hover {
+            background-color: var(--primary-blue);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .portfolio-link i {
+            font-size: 1.3rem;
+            color: var(--primary-blue);
+        }
+
+        .portfolio-link:hover i {
+            color: white;
+        }
+
+        /* Certificates Section */
+        .certificates-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .certificate-item {
+            background-color: var(--light-gray);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-blue);
+            transition: var(--transition);
+        }
+
+        .certificate-item:hover {
+            background-color: var(--light-blue);
+            transform: translateX(5px);
+        }
+
+        .certificate-title {
+            font-weight: 600;
+            color: var(--dark-blue);
+            margin-bottom: 5px;
+        }
+
+        .certificate-issuer {
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--dark-blue);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+
+        .footer a {
+            color: var(--accent-orange);
+            text-decoration: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                padding: 30px 20px;
+                justify-content: center;
+                text-align: center;
+            }
+            
+            .profile-info {
+                min-width: 100%;
+            }
+            
+            .contact-info {
+                justify-content: center;
+            }
+            
+            .main-content {
+                padding: 25px;
+            }
+            
+            .name {
+                font-size: 2rem;
+            }
+            
+            .position {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .header {
+                padding: 20px 15px;
+            }
+            
+            .profile-img {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .main-content {
+                padding: 20px 15px;
+            }
+            
+            .section-title {
+                font-size: 1.3rem;
+            }
+            
+            .portfolio-link {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header & Profile Section -->
+        <header class="header">
+            <!-- Profile Photo - Gunakan foto dummy dari placeholder -->
+            <img src="/assets/pasfoto.jfif" alt="Foto Profil Natalia" class="profile-img">
+            
+            <div class="profile-info">
+                <h1 class="name">Natalia</h1>
+                <p class="position">Calon Magang | Digital Marketing dan Business Development</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Jakarta, Indonesia</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>0812-3456-7890</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>Nataliaaurachalista@emailku.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <span>linkedin.com/in/Natalia</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Left Column -->
+            <div class="left-column">
+                <!-- About/Summary Section -->
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-user"></i> Ringkasan Profil</h2>
+                    <p class="about-text">
+                        Mahasiswa S1 Manajemen dengan IPK 3.62 yang antusias dan termotivasi untuk mengembangkan keterampilan di bidang digital marketing dan business development. Memiliki pengalaman dalam analisis pasar, manajemen media sosial, dan organisasi event. Mencari kesempatan magang untuk menerapkan pengetahuan akademik dalam lingkungan profesional dan berkontribusi pada kesuksesan tim.
+                    </p>
+                </section>
+
+                <!-- Education Section -->
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Pendidikan</h2>
+                    <div class="timeline-item">
+                        <h3 class="item-title">S1 Manajemen</h3>
+                        <p class="item-subtitle">Universitas Mercu Buana</p>
+                        <p class="item-date">2019 - Sekarang</p>
+                        <p class="item-description">IPK: 3.62/4.00</p>
+                        <p class="item-description">Fokus pada pemasaran digital, manajemen bisnis, dan analisis pasar. Aktif dalam organisasi mahasiswa dan berbagai kegiatan kampus.</p>
+                    </div>
+                </section>
+
+                <!-- Project Experience Section -->
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-briefcase"></i> Pengalaman Proyek</h2>
+                    
+                    <div class="timeline-item">
+                        <h3 class="item-title">Analisis Pasar Startup Teknologi</h3>
+                        <p class="item-subtitle">Proyek Kelompok - Mata Kuliah Strategi Pemasaran</p>
+                        <p class="item-date">Februari 2023 - Mei 2023</p>
+                        <p class="item-description">Menganalisis potensi pasar untuk startup teknologi di sektor e-commerce, melakukan riset kompetitor, dan mengidentifikasi peluang pertumbuhan. Menyusun rekomendasi strategi pemasaran berdasarkan data yang dikumpulkan.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h3 class="item-title">Kampanye Media Sosial UMKM Lokal</h3>
+                        <p class="item-subtitle">Proyek Sukarela</p>
+                        <p class="item-date">Oktober 2022 - Desember 2022</p>
+                        <p class="item-description">Mengelola konten Instagram dan Facebook untuk tiga UMKM lokal, meningkatkan engagement sebesar 40% dalam 3 bulan. Membuat konten visual dan copywriting yang menarik untuk target pasar millennial.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h3 class="item-title">Organisasi Event Webinar "Digital Business Trends"</h3>
+                        <p class="item-subtitle">Himpunan Mahasiswa Manajemen</p>
+                        <p class="item-date">Agustus 2022</p>
+                        <p class="item-description">Sebagai ketua panitia untuk webinar yang dihadiri 300+ peserta. Bertanggung jawab atas perencanaan, koordinasi pembicara, promosi acara, dan evaluasi pasca-event.</p>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-column">
+                <!-- Skills Section -->
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-tools"></i> Keahlian</h2>
+                    <div class="skills-container">
+                        <span class="skill-tag">Digital Marketing</span>
+                        <span class="skill-tag">Analisis Pasar</span>
+                        <span class="skill-tag">Media Sosial</span>
+                        <span class="skill-tag">Manajemen Proyek</span>
+                        <span class="skill-tag">Microsoft Office</span>
+                        <span class="skill-tag">Canva</span>
+                        <span class="skill-tag">Google Analytics</span>
+                        <span class="skill-tag">Komunikasi Bisnis</span>
+                        <span class="skill-tag">Organisasi Event</span>
+                        <span class="skill-tag">Analisis Data</span>
+                        <span class="skill-tag">Copywriting</span>
+                        <span class="skill-tag">Kerjasama Tim</span>
+                    </div>
+                </section>
+
+                <!-- Portfolio Links -->
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-link"></i> Portofolio & Links</h2>
+                    <div class="portfolio-links">
+                        <a href="https://behance.net" target="_blank" class="portfolio-link">
+                            <i class="fab fa-behance"></i>
+                            <span>Behance</span>
+                        </a>
+                        <a href="https://drive.google.com" target="_blank" class="portfolio-link">
+                            <i class="fab fa-google-drive"></i>
+                            <span>Google Drive</span>
+                        </a>
+                        <a href="https://linkedin.com/in/budisantoso" target="_blank" class="portfolio-link">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://medium.com" target="_blank" class="portfolio-link">
+                            <i class="fab fa-medium"></i>
+                            <span>Medium</span>
+                        </a>
+                        <a href="https://github.com" target="_blank" class="portfolio-link">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Certificates Section -->
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-certificate"></i> Sertifikat</h2>
+                    <div class="certificates-container">
+                        <div class="certificate-item">
+                            <h4 class="certificate-title">Google Digital Marketing Fundamentals</h4>
+                            <p class="certificate-issuer">Google Digital Garage, 2023</p>
+                        </div>
+                        <div class="certificate-item">
+                            <h4 class="certificate-title">Social Media Marketing Mastery</h4>
+                            <p class="certificate-issuer">Coursera, 2022</p>
+                        </div>
+                        <div class="certificate-item">
+                            <h4 class="certificate-title">Business Analytics Specialization</h4>
+                            <p class="certificate-issuer">University of Pennsylvania (Coursera), 2022</p>
+                        </div>
+                        <div class="certificate-item">
+                            <h4 class="certificate-title">Event Management Fundamentals</h4>
+                            <p class="certificate-issuer">LinkedIn Learning, 2021</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2023 Wenny Tedjakusuma | CV HTML Single-Page untuk Magang Bisnis</p>
+            <p>Email: <a href="mailto:budi.santoso@emailku.com">budi.santoso@emailku.com</a> | Telepon: 0812-3456-7890</p>
+            <p>Template ini dapat disesuaikan dengan mengganti foto profil, mengedit data, dan menyesuaikan tautan portofolio.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Menambahkan efek interaktif sederhana pada skill tags
+        document.querySelectorAll('.skill-tag').forEach(tag => {
+            tag.addEventListener('mouseenter', function() {
+                this.style.boxShadow = '0 5px 15px rgba(74, 111, 165, 0.3)';
+            });
+            
+            tag.addEventListener('mouseleave', function() {
+                this.style.boxShadow = 'none';
+            });
+        });
+        
+        // Menambahkan efek pada portfolio links
+        document.querySelectorAll('.portfolio-link').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                const icon = this.querySelector('i');
+                icon.style.transform = 'scale(1.2)';
+            });
+            
+            link.addEventListener('mouseleave', function() {
+                const icon = this.querySelector('i');
+                icon.style.transform = 'scale(1)';
+            });
+        });
+        
+        // Untuk foto profil: mengganti dengan URL gambar Anda sendiri
+        // let profileImg = document.querySelector('.profile-img');
+        // profileImg.src = "URL_FOTO_ANDA";
+    </script>
+</body>
+</html>
