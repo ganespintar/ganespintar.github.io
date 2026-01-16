@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV | Wenny Tedjakusuma</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    :root {
+      --primary: #4f83cc;
+      --secondary: #f2f6fc;
+      --accent: #ffb703;
+      --text-dark: #2b2b2b;
+      --text-light: #666;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(120deg, #f8fbff, #eef3fb);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 30px;
+      padding: 40px;
+      background: linear-gradient(135deg, #4f83cc, #6ea8e5);
+      color: #fff;
+    }
+
+    .profile-img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid rgba(255,255,255,0.7);
+      transition: transform 0.3s ease;
+    }
+
+    .profile-img:hover {
+      transform: scale(1.05);
+    }
+
+    .header-text h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+    }
+
+    .header-text h2 {
+      font-size: 1rem;
+      font-weight: 400;
+      opacity: 0.9;
+      margin-top: 6px;
+      text-transform: capitalize;
+    }
+
+    .contact {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      font-size: 0.9rem;
+    }
+
+    .contact span i {
+      margin-right: 6px;
+      color: var(--accent);
+    }
+
+    section {
+      padding: 35px 40px;
+      border-bottom: 1px solid #eee;
+    }
+
+    section:last-child {
+      border-bottom: none;
+    }
+
+    section h3 {
+      font-size: 1.3rem;
+      margin-bottom: 18px;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    section h3 i {
+      color: var(--accent);
+    }
+
+    .summary p {
+      color: var(--text-light);
+      max-width: 800px;
+    }
+
+    .edu-item, .project-item {
+      margin-bottom: 16px;
+    }
+
+    .edu-item strong, .project-item strong {
+      font-weight: 500;
+    }
+
+    .project-item {
+      background: var(--secondary);
+      padding: 14px 18px;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill {
+      background: var(--secondary);
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .skill:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .links a {
+      display: inline-block;
+      margin-right: 15px;
+      margin-bottom: 10px;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .links a i {
+      margin-right: 6px;
+    }
+
+    .links a:hover {
+      color: var(--accent);
+    }
+
+    footer {
+      padding: 20px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-light);
+      background: #fafafa;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        text-align: center;
+        justify-content: center;
+      }
+
+      .contact {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <!-- FOTO PROFIL (GANTI LINK SESUAI KEBUTUHAN) -->
+      <img src="https://via.placeholder.com/300" alt="Foto Profil" class="profile-img">
+
+      <div class="header-text">
+        <h1>Wenny Tedjakusuma</h1>
+        <h2>Calon Magang | Digital Marketing & Business Development</h2>
+
+        <div class="contact">
+          <span><i class="fa-solid fa-location-dot"></i>Jakarta</span>
+          <span><i class="fa-solid fa-phone"></i>0812-3456-7890</span>
+          <span><i class="fa-solid fa-envelope"></i>budi.santoso@emailku.com</span>
+          <span><i class="fa-brands fa-linkedin"></i>linkedin.com/in/budisantoso</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="summary">
+      <h3><i class="fa-solid fa-user"></i>Ringkasan</h3>
+      <p>
+        Mahasiswa S1 Manajemen dengan ketertarikan kuat pada digital marketing dan business development.
+        Terbiasa mengerjakan proyek analisis pasar, pengelolaan media sosial, serta event organization.
+        Memiliki kemampuan analitis, komunikasi yang baik, dan siap belajar di lingkungan profesional.
+      </p>
+    </section>
+
+    <section>
+      <h3><i class="fa-solid fa-graduation-cap"></i>Pendidikan</h3>
+      <div class="edu-item">
+        <strong>S1 Manajemen – Universitas Mercu Buana</strong><br>
+        IPK: 3.62
+      </div>
+    </section>
+
+    <section>
+      <h3><i class="fa-solid fa-briefcase"></i>Pengalaman Proyek</h3>
+      <div class="project-item">
+        <strong>Analisis Pasar</strong><br>
+        Melakukan riset pasar, analisis kompetitor, dan penyusunan rekomendasi strategi bisnis.
+      </div>
+      <div class="project-item">
+        <strong>Media Sosial</strong><br>
+        Mengelola konten, engagement, dan evaluasi performa media sosial untuk branding.
+      </div>
+      <div class="project-item">
+        <strong>Event Organization</strong><br>
+        Terlibat dalam perencanaan, koordinasi tim, dan eksekusi acara.
+      </div>
+    </section>
+
+    <section>
+      <h3><i class="fa-solid fa-lightbulb"></i>Skills</h3>
+      <div class="skills">
+        <div class="skill">Market Analysis</div>
+        <div class="skill">Digital Marketing</div>
+        <div class="skill">Social Media Management</div>
+        <div class="skill">Business Development</div>
+        <div class="skill">Communication</div>
+        <div class="skill">Teamwork</div>
+      </div>
+    </section>
+
+    <section>
+      <h3><i class="fa-solid fa-link"></i>Portofolio & Link</h3>
+      <div class="links">
+        <a href="#"><i class="fa-brands fa-behance"></i>Behance / Google Drive</a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
+        <a href="#"><i class="fa-brands fa-medium"></i>Medium</a>
+        <a href="#"><i class="fa-brands fa-github"></i>GitHub</a>
+      </div>
+    </section>
+
+    <section>
+      <h3><i class="fa-solid fa-certificate"></i>Sertifikat</h3>
+      <p>Sertifikat Digital Marketing, Business Strategy, dan pelatihan pendukung lainnya.</p>
+    </section>
+
+    <footer>
+      © 2026 Wenny Tedjakusuma – CV HTML Single Page
+    </footer>
+  </div>
+</body>
+</html>
